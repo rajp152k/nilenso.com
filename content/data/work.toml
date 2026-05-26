@@ -159,6 +159,76 @@ content = '''
 '''
 
 [[clients]]
+hash = "exotel"
+talks = []
+content = '''
+<p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
+    Exotel is a cloud telephony and customer communication platform that helps enterprises automate voice, messaging, and customer conversations.
+</p>
+
+<div class="border-t border-b border-gray-200 py-10">
+    <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
+        We worked with Exotel on AI-powered voice bots and a Conversation Quality Analytics platform, taking both from prototype to production.
+    </p>
+</div>
+
+<div class="md:pt-0 md:pb-0 py-10">
+    <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We built and shipped STS voice bots using Gemini and Pipecat, evaluated ASR models across languages and dialects, and introduced a data-driven evaluation process.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We built a multi-tenant CQA platform that supported 200+ schemas, around 50k calls per day for Exotel's largest enterprise customer, and a real-time CDC pipeline processing around 10 million rows per day.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We hardened the platform in production with significant improvements to API and database query performance. We also improved observability, making it easier to diagnose and fix issues.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
+        Alongside the product work, we led architecture across multiple teams and introduced documentation practices and engineering rigour.
+    </p>
+</div>
+'''
+
+[[clients]]
+hash = "consolidatehealth"
+talks = []
+content = '''
+<p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
+    Consolidate Health is a US healthtech company that consolidates patient data from multiple electronic health record systems into a single API, giving developers real-time access to normalized clinical data using the FHIR standard.
+</p>
+
+<div class="border-t border-b border-gray-200 py-10">
+    <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
+        We have partnered with Consolidate Health since February 2023 to build provider and patient applications, EHR integrations, standardized data pipelines, and AI workflows.
+    </p>
+</div>
+
+<div class="md:pt-0 md:pb-0 py-10">
+    <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We built core applications for healthcare providers and patients to view, access, and securely share consolidated medical records.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We integrated with major US EHR systems including Athena, ModMed, iSalus, and Medent, enabling seamless data exchange across healthcare providers.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We developed standardized data processing systems that make it easy to search and synchronize health information across platforms.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We also built an AI pipeline for patient summarization and agentic AI search for patients.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
+        Throughout the engagement, we worked on ensuring HIPAA compliance on AWS infrastructure.
+    </p>
+</div>
+'''
+
+[[clients]]
 hash = "staples"
 talks = [
 {venue = "Functional Conf", title = "Building an Experimentation Platform in Clojure", link = "https://www.youtube.com/watch?v=YjfXhhxw9Bs"},

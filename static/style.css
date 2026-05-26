@@ -166,6 +166,12 @@ h2 {
     padding: 1rem 2rem;
 }
 
+.logo-slider .tabs-buttons .swiper-slide {
+    min-height: 56px;
+    padding: 0.75rem 1rem;
+    width: 100% !important;
+}
+
 .recent-work-logo {
     display: flex;
     flex-wrap: wrap;
@@ -258,7 +264,8 @@ h2 {
 
 @media (max-width: 1024px) {
     .logo-slider .tabs-buttons .swiper-slide {
-        width: 138px !important;
+        background-size: 96px !important;
+        width: 100% !important;
     }
 }
 
@@ -276,8 +283,8 @@ h2 {
     }
 
     .logo-slider .tabs-buttons .swiper-slide {
-        background-size: 100px !important;
-        width: 125px !important;
+        background-size: 92px !important;
+        width: 100% !important;
     }
 }
 
@@ -307,8 +314,8 @@ h2 {
     }
 
     .logo-slider .tabs-buttons .swiper-slide {
-        background-size: 80px !important;
-        width: 125px !important;
+        background-size: 82px !important;
+        width: 100% !important;
     }
 
     .list-items li:before {
@@ -318,7 +325,7 @@ h2 {
 
 @media (max-width: 375px) {
     .logo-slider .tabs-buttons .swiper-slide {
-        width: 110px !important;
+        width: 100% !important;
     }
 }
 
