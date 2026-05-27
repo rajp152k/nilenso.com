@@ -260,7 +260,7 @@ content = '''
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We integrated with major US EHR systems such as MyChart, Healow, Athena, and Cerner, enabling smoother data exchange across healthcare providers.
+        We integrated with major US EHR systems such as Epic, eClinicalWorks, Athena, and Cerner, enabling smoother data exchange across healthcare providers.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
@@ -268,11 +268,7 @@ content = '''
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built a RAG pipeline to summarize patient complaints from clinical records, helping providers understand patient context faster.
-    </p>
-
-    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We automated medical history generation, reducing manual effort and making it easier to review a patient's health history over time.
+        We built a RAG pipeline to summarize medical history of patients from clinical records, reducing manual effort and helping providers quickly understand patient context and health history over time.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
