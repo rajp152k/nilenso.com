@@ -117,7 +117,9 @@ content = '''
 
 [[clients]]
 hash = "exotel"
-talks = []
+talks = [
+{venue = "The Fifth Elephant", title = "Lessons from building real-time voice AI applications", link = "https://www.youtube.com/live/ufiV8sV55Ew?t=7305s"}
+]
 content = '''
 <p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
     Exotel is a cloud telephony and customer communication platform that helps enterprises automate voice, messaging, and customer conversations.
@@ -125,21 +127,25 @@ content = '''
 
 <div class="border-t border-b border-gray-200 py-10">
     <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        We worked with Exotel on AI-powered voice bots and a Conversation Quality Analytics platform, taking both from prototype to production.
+        Over our engagement, we helped Exotel improve the reliability, intelligence, and operational visibility of customer conversation workflows across AI voice bots and Conversation Quality Analytics.
     </p>
 </div>
 
 <div class="md:pt-0 md:pb-0 py-10">
     <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built and shipped STS voice bots using Gemini and Pipecat, evaluated ASR models across languages and dialects, and introduced a data-driven evaluation process.
+        We built and shipped AI-powered voice bots that helped automate customer interactions across languages and dialects.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built a multi-tenant CQA platform that supported 200+ schemas, around 50k calls per day for Exotel's largest enterprise customer, and a real-time CDC pipeline processing around 10 million rows per day.
+        We introduced a data-driven evaluation process for speech recognition models, making it easier to measure voice bot quality and improve call containment by 10%.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We hardened the platform in production with significant improvements to API and database query performance. We also improved observability, making it easier to diagnose and fix issues.
+        We built a multi-tenant Conversation Quality Analytics platform that supported 200+ schemas and 50k+ calls/day, keeping analytics up to date across around 10 million daily records for near real-time visibility into conversation quality at scale.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We hardened the platform in production with significant improvements to API and database query performance. We also improved observability, making it easier for teams to diagnose and fix issues.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
@@ -243,29 +249,33 @@ content = '''
 
 <div class="border-t border-b border-gray-200 py-10">
     <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        We have partnered with Consolidate Health since February 2023 to build provider and patient applications, EHR integrations, standardized data pipelines, and AI workflows.
+        Since February 2023, we have helped Consolidate Health make patient records easier to access, search, share, summarize, and exchange across the US healthcare system.
     </p>
 </div>
 
 <div class="md:pt-0 md:pb-0 py-10">
     <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built core applications for healthcare providers and patients to view, access, and securely share consolidated medical records.
+        We built applications for healthcare providers to view consolidated patient data and for patients to access and securely share their health records.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We integrated with major US EHR systems such as MyChart, Healow, Athena, and Cerner, enabling seamless data exchange across healthcare providers.
+        We integrated with major US EHR systems such as MyChart, Healow, Athena, and Cerner, enabling smoother data exchange across healthcare providers.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We developed standardized data processing systems that make it easy to search and synchronize health information across platforms.
+        We developed standardized data processing systems that make it easier to search and synchronize health information across platforms.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We also built an AI pipeline for patient summarization and agentic AI search for patients.
+        We built a RAG pipeline to summarize patient complaints from clinical records, helping providers understand patient context faster.
+    </p>
+
+    <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
+        We automated medical history generation, reducing manual effort and making it easier to review a patient's health history over time.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        Throughout the engagement, we worked on ensuring HIPAA compliance on AWS infrastructure.
+        Throughout the engagement, we helped build privacy and security controls on AWS to support HIPAA compliance when handling sensitive patient data.
     </p>
 </div>
 '''
