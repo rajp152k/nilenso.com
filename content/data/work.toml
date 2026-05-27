@@ -117,6 +117,7 @@ content = '''
 
 [[clients]]
 hash = "exotel"
+logo = "exotel.svg"
 talks = [
 {venue = "The Fifth Elephant", title = "Lessons from building real-time voice AI applications", link = "https://www.youtube.com/live/ufiV8sV55Ew?t=7305s"}
 ]
