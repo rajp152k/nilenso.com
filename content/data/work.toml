@@ -128,29 +128,29 @@ content = '''
 
 <div class="border-t border-b border-gray-200 py-10">
     <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        Over our engagement, we helped Exotel improve the reliability, intelligence, and operational visibility of customer conversation workflows across AI voice bots and Conversation Quality Analytics.
+        We helped Exotel answer more customer calls automatically, understand what happened on every call, and keep it all running fast and reliably as the volume grew.
     </p>
 </div>
 
 <div class="md:pt-0 md:pb-0 py-10">
     <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built and shipped AI-powered voice bots that helped automate customer interactions across languages and dialects.
+        We built real-time voice bots that talk with customers and handle calls on their own, understanding a range of Indian languages and accents so people can simply speak naturally.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We introduced a data-driven evaluation process for speech recognition models, making it easier to measure voice bot quality and improve call containment by 10%.
+        We created a clear way to measure how well the bots understood callers, then used it to make them better, resolving 10% more calls end to end without handing off to a human agent.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built a multi-tenant Conversation Quality Analytics platform that supported 200+ schemas and 50k+ calls/day, keeping analytics up to date across around 10 million daily records for near real-time visibility into conversation quality at scale.
+        We built an AI platform to review the quality of customer conversations across teams, working with 50k+ calls and around 10 million daily records, so everyone can see how their conversations are going almost as they happen.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We hardened the platform in production with significant improvements to API and database query performance. We also improved observability, making it easier for teams to diagnose and fix issues.
+        We made this AI platform run faster and more reliably in production, and improved the visibility for teams to catch and fix problems before customers noticed.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        Alongside the product work, we led architecture across multiple teams and introduced documentation practices and engineering rigour.
+        We shaped technical decisions across teams, including how to build and ship AI reliably, and introduced good documentation practices.
     </p>
 </div>
 '''
