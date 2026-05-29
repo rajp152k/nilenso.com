@@ -71,6 +71,21 @@
                                             {% endfor %}
                                         </div>
                                     {% endif %}
+                                    {% if client.writing is defined and client.writing | length > 0 %}
+                                        <div class="hidden sm:block flex flex-col self-end w-full">
+                                            <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
+                                                writing</h6>
+                                            {% for post in client.writing %}
+                                                <p class="text-lg md:text-xl text-pink-500 leading-tight font-medium pb-8">
+                                                    <a href="{{ post.link }}" target="_blank">
+                                                        <span class="underline hover:text-pink-600 font-light cursor-pointer">
+                                                            {{ post.title }}
+                                                        </span>
+                                                    </a>
+                                                </p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="pt-10 sm:pt-0 sm:pl-10 md:pl-18 lg:pl-38 xl:pl-11 md:col-span-4">
                                     {{ client.content | safe }}

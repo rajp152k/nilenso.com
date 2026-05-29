@@ -77,6 +77,10 @@ content = '''
 hash = "porter"
 logo = "porter.svg"
 talks = []
+writing = [
+{title = "Evals before prompts: building an LLM OCR for KYC", link = "https://blog.nilenso.com/blog/2026/05/18/evals-before-prompts-building-an-llm-ocr-for-kyc/"},
+{title = "Temporal anti-pattern: Don't treat expected failures as exceptions", link = "https://blog.nilenso.com/blog/2026/04/30/business-errors-are-outcomes-not-exceptions/"}
+]
 content = '''
 <p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
     Porter is an on-demand logistics platform for goods movement, serving customers and driver-partners across India.
