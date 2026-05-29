@@ -250,13 +250,13 @@ content = '''
 
 <div class="border-t border-b border-gray-200 py-10">
     <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        Since February 2023, we have helped Consolidate Health make patient records easier to access, search, share, summarize, and exchange across the US healthcare system.
+        We built an app that helps healthcare professionals access, search, and understand patient records faster with AI-powered summaries.
     </p>
 </div>
 
 <div class="md:pt-0 md:pb-0 py-10">
     <p class="md:pt-12 text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built applications for healthcare providers to view consolidated patient data and for patients to access and securely share their health records.
+        We built provider and patient applications to view consolidated patient data and securely access and share health records.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
@@ -264,15 +264,15 @@ content = '''
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We developed standardized data processing systems that make it easier to search and synchronize health information across platforms.
+        We built an AI system that pulls context from clinical records and summarizes patient complaints, helping providers quickly understand why a patient is seeking care.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light pb-4 md:pb-7">
-        We built a RAG pipeline to summarize medical history of patients from clinical records, reducing manual effort and helping providers quickly understand patient context and health history over time.
+        We developed standardized data processing systems that make health records easier to search, synchronize, and use in AI workflows across platforms.
     </p>
 
     <p class="text-black text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        Throughout the engagement, we helped build privacy and security controls on AWS to support HIPAA compliance when handling sensitive patient data.
+        We helped build privacy and security controls on AWS to support HIPAA compliance when handling sensitive patient data.
     </p>
 </div>
 '''
