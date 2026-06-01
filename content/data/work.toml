@@ -132,7 +132,7 @@ content = '''
 
 <div class="border-t border-b border-gray-200 py-10">
     <p class="text-pink-500 text-base leading-normal md:text-xl lg:text-xl md:leading-snug font-light">
-        We helped Exotel answer more customer calls automatically, understand what happened on every call, and keep it all running fast and reliably as the volume grew.
+        We helped Exotel automate customer calls with AI voice bots, improving call containment by 10%.
     </p>
 </div>
 
