@@ -166,10 +166,85 @@ h2 {
     padding: 1rem 2rem;
 }
 
+.work-logo-strip-wrap {
+    position: relative;
+}
+
+.work-logo-strip-wrap::before,
+.work-logo-strip-wrap::after {
+    align-items: center;
+    color: rgba(17, 17, 17, 0.45);
+    display: flex;
+    font-size: 1.75rem;
+    font-weight: 300;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.25rem;
+    z-index: 1;
+}
+
+.work-logo-strip-wrap::before {
+    background: linear-gradient(90deg, #f3f4f6 35%, rgba(243, 244, 246, 0));
+    content: "\2039";
+    justify-content: flex-start;
+    left: 0;
+}
+
+.work-logo-strip-wrap::after {
+    background: linear-gradient(270deg, #f3f4f6 35%, rgba(243, 244, 246, 0));
+    content: "\203A";
+    justify-content: flex-end;
+    right: 0;
+}
+
+.work-logo-strip {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 0 2rem;
+    scroll-behavior: smooth;
+    scroll-padding: 0 2rem;
+    scrollbar-width: none;
+}
+
+.work-logo-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.work-logo-strip > div {
+    flex: 0 0 11rem;
+}
+
 .logo-slider .tabs-buttons .swiper-slide {
     min-height: 56px;
     padding: 0.75rem 1rem;
     width: 100% !important;
+}
+
+.work-text-logo-button,
+.work-text-logo {
+    align-items: center;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.work-text-logo-button {
+    font-size: 0.95rem;
+    min-height: 56px;
+}
+
+.work-text-logo {
+    border-bottom: 2px solid var(--nilenso-pink);
+    border-top: 2px solid var(--nilenso-pink);
+    min-height: 4.5rem;
+    padding: 0.75rem 0;
 }
 
 .recent-work-logo {

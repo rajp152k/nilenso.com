@@ -22,25 +22,39 @@
 {% block content %}
     <section class="logo-slider">
         <div class="swiper-container tabs-buttons md:py-16 py-10 lg:py-16 bg-gray-100 md:px-12 px-6">
-            <div id="logo-tab-buttons" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+            <div class="work-logo-strip-wrap">
+            <div id="logo-tab-buttons" class="work-logo-strip">
                 {% set data = load_data(path="content/data/work.toml", format="toml") %}
                 {% for client in data.clients %}
-                    {% if client.logo is defined %}
+                    {% if client.logo_text is defined %}
+                        {% set logo_text = client.logo_text %}
+                    {% elif client.logo is defined %}
                         {% set logo = client.logo %}
                     {% else %}
                         {% set logo = client.hash ~ ".png" %}
                     {% endif %}
-                    <div class="py-3 hover:cursor-pointer">
-                        <button class="hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} bg-no-repeat opacity-40 bg-center"
-                                style='background-size: 104px; background-image: url("/images/{{ logo }}");'></button>
+                    <div class="py-3 hover:cursor-pointer" data-client-hash="{{ client.hash }}">
+                        {% if client.logo_text is defined %}
+                            <button class="work-text-logo-button hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} opacity-40">
+                                {% for word in logo_text | split(pat=" ") %}
+                                    <span>{{ word }}</span>
+                                {% endfor %}
+                            </button>
+                        {% else %}
+                            <button class="hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} bg-no-repeat opacity-40 bg-center"
+                                    style='background-size: 104px; background-image: url("/images/{{ logo }}");'></button>
+                        {% endif %}
                     </div>
                 {% endfor %}
+            </div>
             </div>
         </div>
         <div class="swiper-container tabs-content">
             <div class="swiper-wrapper">
                 {% for client in data.clients %}
-                    {% if client.logo is defined %}
+                    {% if client.logo_text is defined %}
+                        {% set logo_text = client.logo_text %}
+                    {% elif client.logo is defined %}
                         {% set logo = client.logo %}
                     {% else %}
                         {% set logo = client.hash ~ ".png" %}
@@ -50,10 +64,18 @@
                             <div class="md:grid md:grid-cols-5 md:gap-3 xl:divide-x">
                                 <div class="flex flex-wrap justify-center md:justify-start">
                                     <figure class="w-32 mb-10 sm:mb-0">
-                                        <img src="/images/{{ logo }}" alt="{{ client.hash }}"
-                                             class="w-full"
-                                             loading="lazy"
-                                             decoding="async"/>
+                                        {% if client.logo_text is defined %}
+                                            <span class="work-text-logo">
+                                                {% for word in logo_text | split(pat=" ") %}
+                                                    <span>{{ word }}</span>
+                                                {% endfor %}
+                                            </span>
+                                        {% else %}
+                                            <img src="/images/{{ logo }}" alt="{{ client.hash }}"
+                                                 class="w-full"
+                                                 loading="lazy"
+                                                 decoding="async"/>
+                                        {% endif %}
                                     </figure>
                                     {% if client.talks | length > 0 %}
                                         <div class="hidden sm:block flex flex-col self-end w-full">
@@ -120,11 +142,25 @@
                 return;
             }
 
+            function scrollLogoTabIntoView(index) {
+                var tabButton = tabButtons.children[index];
+
+                if (!tabButton) {
+                    return;
+                }
+
+                tabButtons.scrollTo({
+                    left: tabButton.offsetLeft - ((tabButtons.clientWidth - tabButton.offsetWidth) / 2),
+                    behavior: 'smooth'
+                });
+            }
+
             tabContent = new Swiper('.tabs-content', {
                 hashnav: true,
                 onSlideChangeStart: function (swiper, _event) {
                     tabButtons.children[swiper.previousIndex].children[0].classList.remove('active', 'active-tab');
                     tabButtons.children[swiper.activeIndex].children[0].classList.add('active', 'active-tab');
+                    scrollLogoTabIntoView(swiper.activeIndex);
                 }
             });
 
@@ -133,6 +169,10 @@
                     tabContent.slideTo(clientNum);
                 };
             }
+
+            window.setTimeout(function () {
+                scrollLogoTabIntoView(tabContent.activeIndex);
+            }, 100);
         });
     </script>
 {% endblock content %}
