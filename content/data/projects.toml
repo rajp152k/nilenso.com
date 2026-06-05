@@ -29,9 +29,9 @@ image = "/images/porter.svg"
 name = "Porter"
 
 [[recent]]
-url = "https://www.vitalstrategies.org/"
-image = "/images/vital-strategies.png"
-name = "Vital Strategies"
+url = "https://resolvetosavelives.org/"
+image = "/images/resolve-to-save-lives.svg"
+name = "Resolve to Save Lives"
 
 [[recent]]
 url = "https://exotel.com/"
