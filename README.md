@@ -1,13 +1,12 @@
 # nilenso.com
 
-source code to the website
+source code for https://nilenso.com
 
 ## dependencies
 
 ```bash
-brew install zola
-nvm install 18
-nvm use 18
+brew install mise
+mise install
 npm install
 ```
 
