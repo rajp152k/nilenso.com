@@ -22,25 +22,39 @@
 {% block content %}
     <section class="logo-slider">
         <div class="swiper-container tabs-buttons md:py-16 py-10 lg:py-16 bg-gray-100 md:px-12 px-6">
-            <div id="logo-tab-buttons" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
+            <div class="work-logo-strip-wrap">
+            <div id="logo-tab-buttons" class="work-logo-strip">
                 {% set data = load_data(path="content/data/work.toml", format="toml") %}
                 {% for client in data.clients %}
-                    {% if client.logo is defined %}
+                    {% if client.logo_text is defined %}
+                        {% set logo_text = client.logo_text %}
+                    {% elif client.logo is defined %}
                         {% set logo = client.logo %}
                     {% else %}
                         {% set logo = client.hash ~ ".png" %}
                     {% endif %}
-                    <div class="py-3 hover:cursor-pointer">
-                        <button class="hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} bg-no-repeat opacity-40 bg-center"
-                                style='background-size: 104px; background-image: url("/images/{{ logo }}");'></button>
+                    <div class="py-3 hover:cursor-pointer" data-client-hash="{{ client.hash }}">
+                        {% if client.logo_text is defined %}
+                            <button class="work-text-logo-button hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} opacity-40">
+                                {% for word in logo_text | split(pat=" ") %}
+                                    <span>{{ word }}</span>
+                                {% endfor %}
+                            </button>
+                        {% else %}
+                            <button class="hover:opacity-100 swiper-slide{% if loop.index == 1 %} active-tab{% endif %} bg-no-repeat opacity-40 bg-center"
+                                    style='background-size: 104px; background-image: url("/images/{{ logo }}");'></button>
+                        {% endif %}
                     </div>
                 {% endfor %}
+            </div>
             </div>
         </div>
         <div class="swiper-container tabs-content">
             <div class="swiper-wrapper">
                 {% for client in data.clients %}
-                    {% if client.logo is defined %}
+                    {% if client.logo_text is defined %}
+                        {% set logo_text = client.logo_text %}
+                    {% elif client.logo is defined %}
                         {% set logo = client.logo %}
                     {% else %}
                         {% set logo = client.hash ~ ".png" %}
@@ -49,12 +63,35 @@
                         <div class="py-8 md:py-16 lg:py-28 px-6 md:px-12">
                             <div class="md:grid md:grid-cols-5 md:gap-3 xl:divide-x">
                                 <div class="flex flex-wrap justify-center md:justify-start">
-                                    <figure class="w-32 mb-10 sm:mb-0">
-                                        <img src="/images/{{ logo }}" alt="{{ client.hash }}"
-                                             class="w-full"
-                                             loading="lazy"
-                                             decoding="async"/>
+                                    <figure class="w-32 mb-12">
+                                        {% if client.logo_text is defined %}
+                                            <span class="work-text-logo">
+                                                {% for word in logo_text | split(pat=" ") %}
+                                                    <span>{{ word }}</span>
+                                                {% endfor %}
+                                            </span>
+                                        {% else %}
+                                            <img src="/images/{{ logo }}" alt="{{ client.hash }}"
+                                                 class="w-full"
+                                                 loading="lazy"
+                                                 decoding="async"/>
+                                        {% endif %}
                                     </figure>
+                                    {% if client.writing is defined and client.writing | length > 0 %}
+                                        <div class="hidden sm:block flex flex-col self-end w-full">
+                                            <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
+                                                writing</h6>
+                                            {% for post in client.writing %}
+                                                <p class="text-lg md:text-xl text-pink-500 leading-tight font-medium pb-8">
+                                                    <a href="{{ post.link }}" target="_blank">
+                                                        <span class="underline hover:text-pink-600 font-light cursor-pointer">
+                                                            {{ post.title }}
+                                                        </span>
+                                                    </a>
+                                                </p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                     {% if client.talks | length > 0 %}
                                         <div class="hidden sm:block flex flex-col self-end w-full">
                                             <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
@@ -65,21 +102,6 @@
                                                     <a href="{{ talk.link }}" target="_blank">
                                                         <span class="underline hover:text-pink-600 font-light cursor-pointer">
                                                             {{ talk.title }}
-                                                        </span>
-                                                    </a>
-                                                </p>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                    {% if client.writing is defined and client.writing | length > 0 %}
-                                        <div class="hidden sm:block flex flex-col self-end w-full">
-                                            <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
-                                                writing</h6>
-                                            {% for post in client.writing %}
-                                                <p class="text-lg md:text-xl text-pink-500 leading-tight font-medium pb-8">
-                                                    <a href="{{ post.link }}" target="_blank">
-                                                        <span class="underline hover:text-pink-600 font-light cursor-pointer">
-                                                            {{ post.title }}
                                                         </span>
                                                     </a>
                                                 </p>
@@ -120,11 +142,25 @@
                 return;
             }
 
+            function scrollLogoTabIntoView(index) {
+                var tabButton = tabButtons.children[index];
+
+                if (!tabButton) {
+                    return;
+                }
+
+                tabButtons.scrollTo({
+                    left: tabButton.offsetLeft - ((tabButtons.clientWidth - tabButton.offsetWidth) / 2),
+                    behavior: 'smooth'
+                });
+            }
+
             tabContent = new Swiper('.tabs-content', {
                 hashnav: true,
                 onSlideChangeStart: function (swiper, _event) {
                     tabButtons.children[swiper.previousIndex].children[0].classList.remove('active', 'active-tab');
                     tabButtons.children[swiper.activeIndex].children[0].classList.add('active', 'active-tab');
+                    scrollLogoTabIntoView(swiper.activeIndex);
                 }
             });
 
@@ -133,6 +169,10 @@
                     tabContent.slideTo(clientNum);
                 };
             }
+
+            window.setTimeout(function () {
+                scrollLogoTabIntoView(tabContent.activeIndex);
+            }, 100);
         });
     </script>
 {% endblock content %}
