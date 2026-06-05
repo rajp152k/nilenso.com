@@ -63,7 +63,7 @@
                         <div class="py-8 md:py-16 lg:py-28 px-6 md:px-12">
                             <div class="md:grid md:grid-cols-5 md:gap-3 xl:divide-x">
                                 <div class="flex flex-wrap justify-center md:justify-start">
-                                    <figure class="w-32 mb-10 sm:mb-0">
+                                    <figure class="w-32 mb-12">
                                         {% if client.logo_text is defined %}
                                             <span class="work-text-logo">
                                                 {% for word in logo_text | split(pat=" ") %}
@@ -77,6 +77,21 @@
                                                  decoding="async"/>
                                         {% endif %}
                                     </figure>
+                                    {% if client.writing is defined and client.writing | length > 0 %}
+                                        <div class="hidden sm:block flex flex-col self-end w-full">
+                                            <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
+                                                writing</h6>
+                                            {% for post in client.writing %}
+                                                <p class="text-lg md:text-xl text-pink-500 leading-tight font-medium pb-8">
+                                                    <a href="{{ post.link }}" target="_blank">
+                                                        <span class="underline hover:text-pink-600 font-light cursor-pointer">
+                                                            {{ post.title }}
+                                                        </span>
+                                                    </a>
+                                                </p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                     {% if client.talks | length > 0 %}
                                         <div class="hidden sm:block flex flex-col self-end w-full">
                                             <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
@@ -87,21 +102,6 @@
                                                     <a href="{{ talk.link }}" target="_blank">
                                                         <span class="underline hover:text-pink-600 font-light cursor-pointer">
                                                             {{ talk.title }}
-                                                        </span>
-                                                    </a>
-                                                </p>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                    {% if client.writing is defined and client.writing | length > 0 %}
-                                        <div class="hidden sm:block flex flex-col self-end w-full">
-                                            <h6 class="font-normal text-gray-600 text-xl md:text-2xl leading-tight tracking-wider pb-10">
-                                                writing</h6>
-                                            {% for post in client.writing %}
-                                                <p class="text-lg md:text-xl text-pink-500 leading-tight font-medium pb-8">
-                                                    <a href="{{ post.link }}" target="_blank">
-                                                        <span class="underline hover:text-pink-600 font-light cursor-pointer">
-                                                            {{ post.title }}
                                                         </span>
                                                     </a>
                                                 </p>

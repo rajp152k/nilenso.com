@@ -113,7 +113,8 @@ logo = "porter.svg"
 talks = []
 writing = [
 {title = "Evals before prompts: building an LLM OCR for KYC", link = "https://blog.nilenso.com/blog/2026/05/18/evals-before-prompts-building-an-llm-ocr-for-kyc/"},
-{title = "Temporal anti-pattern: Don't treat expected failures as exceptions", link = "https://blog.nilenso.com/blog/2026/04/30/business-errors-are-outcomes-not-exceptions/"}
+{title = "Temporal anti-pattern: Don't treat expected failures as exceptions", link = "https://blog.nilenso.com/blog/2026/04/30/business-errors-are-outcomes-not-exceptions/"},
+{title = "Feature platforms", link = "https://blog.nilenso.com/blog/2026/02/19/feature-platforms/"}
 ]
 content = '''
 <p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
@@ -196,6 +197,11 @@ content = '''
 [[clients]]
 hash = "vital-strategies"
 logo = "resolve-to-save-lives.svg"
+writing = [
+{title = "Training the Simple way", link = "https://blog.nilenso.com/blog/2019/10/04/training-the-simple-way/"},
+{title = "Offline-first apps are appropriate for many clinical workflows", link = "https://blog.nilenso.com/blog/2020/01/02/offline-first-apps-are-appropriate-for-many-clini/"},
+{title = "A systems thinking approach to saving lives from heart attacks and strokes", link = "https://blog.nilenso.com/blog/2025/01/02/a-systems-thinking-approach-to-saving-lives-from-heart-attacks-and-strokes/"}
+]
 talks = [
 {venue = "Meta Refresh", title = "Engineering to embrace change", link = "https://www.youtube.com/watch?v=1FqOF9P0nEY"},
 ]
