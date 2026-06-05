@@ -114,7 +114,8 @@ talks = []
 writing = [
 {title = "Evals before prompts: building an LLM OCR for KYC", link = "https://blog.nilenso.com/blog/2026/05/18/evals-before-prompts-building-an-llm-ocr-for-kyc/"},
 {title = "Temporal anti-pattern: Don't treat expected failures as exceptions", link = "https://blog.nilenso.com/blog/2026/04/30/business-errors-are-outcomes-not-exceptions/"},
-{title = "Feature platforms", link = "https://blog.nilenso.com/blog/2026/02/19/feature-platforms/"}
+{title = "Feature Platforms: The Underrated Infrastructure Layer Behind Fast ML Teams", link = "https://blog.nilenso.com/blog/2026/02/19/feature-platforms/"},
+{title = "My quarterly system health check-in: beyond the dashboard", link = "https://blog.nilenso.com/blog/2025/09/05/my-quarterly-system-health-check-in-beyond-the-dashboard/"}
 ]
 content = '''
 <p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
