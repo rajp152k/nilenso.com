@@ -77,13 +77,13 @@ content = '''
 
 [[clients]]
 hash = "ai-voice-assistant"
-logo_text = "Identity platform"
+logo_text = "Consumer technology platform"
 talks = [
 {venue = "The Fifth Elephant", title = "Lessons from building real-time voice AI applications", link = "https://www.youtube.com/live/ufiV8sV55Ew?t=7305s"}
 ]
 content = '''
 <p class="text-black text-base leading-normal md:text-xl lg:text-2xl  xl:text-2xl font-normal pb-10 w-full max-w-[46rem] w-full company-blurb">
-    We built an AI voice assistant for a leading identity platform with 1M+ app downloads.
+    We built an AI voice assistant for a leading consumer technology platform with 1M+ app downloads.
 </p>
 
 <div class="border-t border-b border-gray-200 py-10">
