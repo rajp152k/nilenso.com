@@ -75,6 +75,36 @@ main {
     min-height: 75vh;
 }
 
+.announcement-banner {
+    background: #111111;
+    border-bottom: 1px solid rgba(255, 61, 132, 0.45);
+    color: var(--nilenso-white);
+    font-size: 0.88rem;
+    line-height: 1.45;
+    padding: 0.7rem 1.5rem;
+    text-align: center;
+}
+
+.announcement-banner a {
+    color: var(--nilenso-white);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--nilenso-pink);
+    text-underline-offset: 0.2em;
+}
+
+.announcement-banner a:hover {
+    color: var(--nilenso-pink);
+}
+
+@media (min-width: 768px) {
+    .announcement-banner {
+        font-size: 0.95rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
 h1 {
     font-weight: 500;
     font-size: 1.8rem;
