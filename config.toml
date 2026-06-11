@@ -10,6 +10,7 @@ theme = "catppuccin-mocha"
 # Put all your custom variables here
 tabs = [
     {name="work",path="/work/",nav=true},
+    {name="open source",path="/open-source/",nav=true},
     {name="jobs",path="/jobs/",nav=true},
     # {name="perks",path="/perks/",nav=true},
     {name="people",path="/people/",nav=true},
