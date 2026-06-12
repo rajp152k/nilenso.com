@@ -4,7 +4,7 @@ tagline = "Break a conversation log into its parts and visualise how each grows 
 description = "Context Viewer takes a conversation log, breaks it down into constituent components — system prompts, tool calls, generated artefacts, user instructions — and visualises how each grows across turns in token count and relative weight. It uses AI-assisted semantic chunking to flag redundancy and irrelevance, and runs entirely in the browser with support for OpenAI conversation formats."
 icon = "/images/svg/sparkle.svg"
 media_type = "video"
-media_src = "/videos/full-cv-demo-2x.mp4"
+media_src = "/videos/context-viewer-demo.mp4"
 github_url = "https://github.com/nilenso/context-viewer"
 docs_url = "https://github.com/nilenso/context-viewer"
 playground_url = "https://nilenso.github.io/context-viewer/"
@@ -44,6 +44,33 @@ console.log(result.usage); // Token usage across all iterations
 await session.close();'''
 github_url = "https://github.com/nilenso/megasthenes"
 docs_url = "https://nilenso.github.io/megasthenes"
+
+[[projects]]
+name = "GRPO Trainer"
+tagline = "Toolkit to fine-tune LLMs"
+description = "grpo-trainer is a toolkit for fine-tuning LLMs to generate high-quality OCaml code. It supports supervised fine-tuning (SFT), RLVR/GRPO training, evaluation, and monitoring with feedback from the OCaml compiler and test suite."
+icon = "/images/svg/sparkle.svg"
+github_url = "https://github.com/nilenso/grpo-trainer"
+media_type = "code"
+code_sample = '''
+
+# Clone repository
+git clone https://github.com/nilenso/grpo-trainer.git
+cd grpo-trainer
+
+# Enter nix shell
+make shell
+
+# Run the script
+scripts/bootstrap.sh
+
+# Start model server
+llama-server -hf unsloth/Qwen2.5-Coder-1.5B-Instruct-GGUF:F16 -c 4096 -ngl -1
+'''
+blog_posts = [
+    { title = "Training a small model to write better OCaml with RLVR and GRPO", url = "https://blog.nilenso.com/blog/2026/05/18/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/" },
+    { title = "Reinforcement Learning with GRPO", url = "https://blog.nilenso.com/blog/2026/01/28/reinforcement-learning-with-grpo/" },
+]
 
 [[projects]]
 name = "Goose"
