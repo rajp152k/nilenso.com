@@ -51,7 +51,7 @@
                         {% if project.docs_url %}
                         <a href="{{ project.docs_url }}" target="_blank" class="project-link">
                             <img src="/images/svg/docs-book.svg" alt="Docs" class="project-link-icon">
-                            <span>Documentation</span>
+                            <span>Docs</span>
                         </a>
                         {% endif %}
                         
@@ -72,7 +72,7 @@
                         {% if project.youtube_url %}
                         <a href="{{ project.youtube_url }}" target="_blank" class="project-link">
                             <img src="/images/svg/youtube.svg" alt="YouTube" class="project-link-icon">
-                            <span>YouTube</span>
+                            <span>Demo</span>
                         </a>
                         {% endif %}
                         
@@ -88,7 +88,7 @@
                     {% if project.blog_posts %}
                     <div class="mt-4">
                         <p class="font-medium text-gray-600 mb-3">Blog posts:</p>
-                        <ul class="space-y-2">
+                        <ul class="space-y-2 mt-2">
                             {% for post in project.blog_posts %}
                             <li>
                                 <a href="{{ post.url }}" target="_blank" class="text-gray-600 underline text-m font-light hover:text-pink-500">

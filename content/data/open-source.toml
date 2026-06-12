@@ -53,7 +53,7 @@ icon = "/images/svg/sparkle.svg"
 github_url = "https://github.com/nilenso/grpo-trainer"
 media_type = "code"
 code_sample = '''
-
+# Setup
 # Clone repository
 git clone https://github.com/nilenso/grpo-trainer.git
 cd grpo-trainer
@@ -73,21 +73,9 @@ blog_posts = [
 ]
 
 [[projects]]
-name = "Goose"
-tagline = "A background job processing library for Clojure with native support for RabbitMQ and Redis."
-description = "Goose supports enqueuing jobs for async execution, scheduled execution, batch processing, and cron jobs — with native support for both RabbitMQ and Redis as message brokers. Error handling and retries are built in, and the message broker and metrics backend are pluggable. A jobs management console provides visibility into queue state and job lifecycle. It is currently used in production across multiple companies."
-icon = ""
-media_type = "image"
-media_src = "/images/goose-console.png"
-github_url = "https://github.com/nilenso/goose"
-docs_url = "https://github.com/nilenso/goose/wiki"
-youtube_url = "https://youtu.be/GQ1It09DLM0?si=2hfXXKQhZnunvd-r"
-
-[[projects]]
 name = "Bean"
 tagline = "A spreadsheet programming environment built to make spreadsheets maintainable, auditable, and reliable."
 description = "Bean explores the spreadsheet as a programming environment from the ground up. It consists of grid, a formula language interpreter that enables reactive calculation with dynamic arrays."
-icon = ""
 media_type = "image"
 media_src = "/images/bean.png"
 github_url = "https://github.com/nilenso/bean"
@@ -95,7 +83,18 @@ playground_url = "https://bean.nilenso.com/"
 website_url = "https://bean.nilenso.com/blog/"
 youtube_url = "https://youtu.be/qj4ZFOBUbqY?si=BDInePuQUvxpOjvG"
 blog_posts = [
+    { title = "Spreadsheets as a Tool for Thought: Evolution of the Spreadsheet Interface", url = "https://prabros.com/bean/blog/spreadsheet-as-a-tool-for-thought-1" },
     { title = "Spreadsheets and Small Software", url = "https://blog.nilenso.com/blog/2023/11/10/spreadsheets-and-small-software/" },
     { title = "Calculating spilled arrays in a spreadsheet", url = "https://bean.nilenso.com/blog/posts/calculating-spilled-arrays/" },
     { title = "On relative references and formula replication", url = "https://bean.nilenso.com/blog/posts/relative-references/" }
 ]
+
+[[projects]]
+name = "Goose"
+tagline = "A background job processing library for Clojure with native support for RabbitMQ and Redis."
+description = "Goose supports enqueuing jobs for async execution, scheduled execution, batch processing, and cron jobs — with native support for both RabbitMQ and Redis as message brokers. Error handling and retries are built in, and the message broker and metrics backend are pluggable. A jobs management console provides visibility into queue state and job lifecycle. It is currently used in production across multiple companies."
+media_type = "image"
+media_src = "/images/goose-console.png"
+github_url = "https://github.com/nilenso/goose"
+docs_url = "https://github.com/nilenso/goose/wiki"
+youtube_url = "https://youtu.be/GQ1It09DLM0?si=2hfXXKQhZnunvd-r"
