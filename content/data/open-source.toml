@@ -44,6 +44,10 @@ console.log(result.usage); // Token usage across all iterations
 await session.close();'''
 github_url = "https://github.com/nilenso/megasthenes"
 docs_url = "https://nilenso.github.io/megasthenes"
+blog_posts = [
+    { title = "Our approach to evals with megasthenes", url = "https://blog.nilenso.com/blog/2026/06/10/our-approach-to-evals-with-megasthenes/" }
+]
+
 
 [[projects]]
 name = "GRPO Trainer"
