@@ -104,12 +104,16 @@
                 <!-- Project Media -->
                 <div class="bg-gray-100 rounded-lg p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-[300px] max-h-[350px] md:max-h-[400px] overflow-hidden">
                     {% if project.media_type == "video" %}
-                    <video controls class="w-full h-auto object-contain max-h-[400px] rounded">
-                        <source src="{{ project.media_src }}" type="video/mp4">
-                        <p class="text-center text-gray-600 italic">Demo video showing {{ project.name }}</p>
-                    </video>
+                    <a href="#media-{{ loop.index }}" class="media-trigger">
+                        <video class="w-full h-auto object-contain max-h-[400px] rounded pointer-events-none">
+                            <source src="{{ project.media_src }}" type="video/mp4">
+                            <p class="text-center text-gray-600 italic">Demo video showing {{ project.name }}</p>
+                        </video>
+                    </a>
                     {% elif project.media_type == "image" %}
-                    <img src="{{ project.media_src }}" alt="{{ project.name }}" class="w-full h-auto object-contain max-h-[400px] rounded">
+                    <a href="#media-{{ loop.index }}" class="media-trigger">
+                        <img src="{{ project.media_src }}" alt="{{ project.name }}" class="w-full h-auto object-contain max-h-[400px] rounded">
+                    </a>
                     {% elif project.media_type == "code" %}
                     <pre class="bg-gray-50 text-gray-800 p-6 rounded text-xs md:text-sm font-mono overflow-x-auto overflow-y-auto max-h-[350px] w-full border border-gray-200"><code>{{ project.code_sample }}</code></pre>
                     {% endif %}
@@ -118,6 +122,24 @@
         </article>
         {% endfor %}
     </section>
+    
+    <!-- Media Preview Modals -->
+    {% for project in projects_data.projects %}
+        {% if project.media_type == "video" or project.media_type == "image" %}
+        <div id="media-{{ loop.index }}" class="media-modal">
+            <a href="#_" class="media-modal-close">&times;</a>
+            <div class="media-modal-content">
+                {% if project.media_type == "video" %}
+                <video controls autoplay class="w-full h-auto">
+                    <source src="{{ project.media_src }}" type="video/mp4">
+                </video>
+                {% elif project.media_type == "image" %}
+                <img src="{{ project.media_src }}" alt="{{ project.name }}" class="w-full h-auto">
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
     
     <!-- Call to action -->
     <section class="py-10 md:py-16 px-6 md:px-12 border-t border-gray-200">
