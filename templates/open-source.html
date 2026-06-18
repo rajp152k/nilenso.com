@@ -109,17 +109,20 @@
                 <!-- Project Media -->
                 <div class="bg-gray-100 rounded-lg p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-[300px] max-h-[350px] md:max-h-[400px] overflow-hidden">
                     {% if project.media_type == "video" %}
-                    <a href="#media-{{ loop.index }}" class="media-trigger">
-                        <video class="w-full h-auto object-contain max-h-[400px] rounded pointer-events-none">
+                    <a href="#media-{{ loop.index }}" class="media-trigger relative block">
+                        <video class="w-full h-auto object-contain max-h-[400px] rounded pointer-events-none" muted>
                             <source src="{{ project.media_src }}" type="video/mp4">
-                            <p class="text-center text-gray-600 italic">Demo video showing {{ project.name }}</p>
                         </video>
+                        <!-- Play button overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="/images/svg/video-play.svg" alt="Play Video" class="w-16 h-16 md:w-20 md:h-20 opacity-80 hover:opacity-100 transition-all hover:scale-110 ">
+                        </div>
                     </a>
                     {% elif project.media_type == "image" %}
                     <a href="#media-{{ loop.index }}" class="media-trigger">
                         <img src="{{ project.media_src }}" alt="{{ project.name }}" class="w-full h-auto object-contain max-h-[400px] rounded">
                     </a>
-                    {% elif project.media_type == "code" %}
+                    {% elif project.media_type == "code" and project.code_sample %}
                     {% if project.code_type %}
                     <pre class="syntax-highlight language-{{ project.code_type }} rounded overflow-x-auto overflow-y-auto max-h-[350px] w-full"><code class="language-{{ project.code_type }}">{{ project.code_sample }}</code></pre>
                     {% else %}
@@ -139,7 +142,7 @@
             <a href="#_" class="media-modal-close">&times;</a>
             <div class="media-modal-content">
                 {% if project.media_type == "video" %}
-                <video controls autoplay class="w-full h-auto">
+                <video controls class="w-full h-auto">
                     <source src="{{ project.media_src }}" type="video/mp4">
                 </video>
                 {% elif project.media_type == "image" %}
@@ -157,4 +160,29 @@
             <a href="https://github.com/nilenso" target="_blank" class="underline hover:text-pink-500">our github</a>.
         </h5>
     </section>
+    
+    <script>
+        // Pause videos when modal close button is clicked
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('media-modal-close')) {
+                const modal = e.target.closest('.media-modal');
+                const video = modal?.querySelector('video');
+                if (video) {
+                    video.pause();
+                }
+            }
+        });
+        
+        // Play video when modal becomes visible
+        window.addEventListener('hashchange', function() {
+            if (location.hash.startsWith('#media-')) {
+                const modal = document.querySelector(location.hash);
+                const video = modal?.querySelector('video');
+                if (video) {
+                    video.play();
+                }
+            }
+        });
+    
+    </script>
 {% endblock content %}

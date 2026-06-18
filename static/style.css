@@ -621,3 +621,34 @@ a.underline, span.underline {
 body:has(.media-modal:target) {
     overflow: hidden;
 }
+
+/* Video play button overlay styles */
+.media-trigger {
+    position: relative;
+    display: block;
+}
+
+.media-trigger video {
+    display: block;
+}
+
+.media-trigger:hover img[alt="Play Video"] {
+    transform: scale(1.1);
+}
+
+/* Custom play button with semi-transparent background */
+.video-play-custom {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-play-custom:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
