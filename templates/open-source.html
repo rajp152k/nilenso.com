@@ -142,7 +142,7 @@
             <a href="#_" class="media-modal-close">&times;</a>
             <div class="media-modal-content">
                 {% if project.media_type == "video" %}
-                <video controls class="w-full h-auto">
+                <video controls preload="metadata" class="w-full h-auto" controlsList="nodownload">
                     <source src="{{ project.media_src }}" type="video/mp4">
                 </video>
                 {% elif project.media_type == "image" %}
@@ -160,29 +160,5 @@
             <a href="https://github.com/nilenso" target="_blank" class="underline hover:text-pink-500">our github</a>.
         </h5>
     </section>
-    
-    <script>
-        // Pause videos when modal close button is clicked
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('media-modal-close')) {
-                const modal = e.target.closest('.media-modal');
-                const video = modal?.querySelector('video');
-                if (video) {
-                    video.pause();
-                }
-            }
-        });
-        
-        // Play video when modal becomes visible
-        window.addEventListener('hashchange', function() {
-            if (location.hash.startsWith('#media-')) {
-                const modal = document.querySelector(location.hash);
-                const video = modal?.querySelector('video');
-                if (video) {
-                    video.play();
-                }
-            }
-        });
-    
-    </script>
+
 {% endblock content %}
