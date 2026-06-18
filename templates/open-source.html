@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block title %} Open Source | nilenso {% endblock title %}
 
+{% block head %}
+    <link rel="preload" href="/vendor/prism/prism.min.css" as="style" onload="this.rel='stylesheet'">
+    <script src="/vendor/prism/prism.min.js" defer></script>
+{% endblock head %}
+
 {% block header %}
     <section class="bg-black py-10 md:py-16 lg:py-16 px-6 md:px-10 lg:px-9">
         <div>
@@ -115,7 +120,11 @@
                         <img src="{{ project.media_src }}" alt="{{ project.name }}" class="w-full h-auto object-contain max-h-[400px] rounded">
                     </a>
                     {% elif project.media_type == "code" %}
+                    {% if project.code_type %}
+                    <pre class="syntax-highlight language-{{ project.code_type }} rounded overflow-x-auto overflow-y-auto max-h-[350px] w-full"><code class="language-{{ project.code_type }}">{{ project.code_sample }}</code></pre>
+                    {% else %}
                     <pre class="bg-gray-50 text-gray-800 p-6 rounded text-xs md:text-sm font-mono overflow-x-auto overflow-y-auto max-h-[350px] w-full border border-gray-200"><code>{{ project.code_sample }}</code></pre>
+                    {% endif %}
                     {% endif %}
                 </div>
             </div>

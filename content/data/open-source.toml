@@ -21,6 +21,7 @@ tagline = "Ask plain-language questions about any GitHub or GitLab repository â€
 description = "Megasthenes lets you ask plain-language questions about any GitHub or GitLab repository and get sourced, structured answers pinned to a specific branch, tag, or commit. It supports any model via OpenRouter, Anthropic, or Google, runs tool execution in an isolated container, and ships with built-in OpenTelemetry tracing and an LLM-judge evaluation system to track answer quality over time."
 icon = "/images/svg/sparkle.svg"
 media_type = "code"
+code_type = "javascript"
 code_sample = '''import { Client } from "@nilenso/megasthenes";
 
 const client = new Client();
@@ -56,8 +57,8 @@ description = "grpo-trainer is a toolkit for fine-tuning LLMs to generate high-q
 icon = "/images/svg/sparkle.svg"
 github_url = "https://github.com/nilenso/grpo-trainer"
 media_type = "code"
+code_type = "bash"
 code_sample = '''
-# Setup
 # Clone repository
 git clone https://github.com/nilenso/grpo-trainer.git
 cd grpo-trainer
