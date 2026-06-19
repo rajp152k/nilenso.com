@@ -107,7 +107,7 @@
                 </div>
                 
                 <!-- Project Media -->
-                <div class="rounded-lg p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-[300px] overflow-hidden">
+                <div class="bg-gray-100 rounded-lg p-4 md:p-8 flex items-center justify-center self-start md:mt-6 overflow-hidden" style="height: calc(100% - 1.5rem);">
                     {% if project.media_type == "video" %}
                     <a href="#media-{{ loop.index }}" class="media-trigger relative block">
                         <video class="w-full h-auto object-contain max-h-[400px] rounded pointer-events-none" muted>
