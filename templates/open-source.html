@@ -124,9 +124,9 @@
                     </a>
                     {% elif project.media_type == "code" and project.code_sample %}
                     {% if project.code_type %}
-                    <pre class="syntax-highlight language-{{ project.code_type }} rounded overflow-x-auto w-full text-xs"><code class="language-{{ project.code_type }}">{{ project.code_sample }}</code></pre>
+                    <pre class="language-{{ project.code_type }} rounded"><code class="language-{{ project.code_type }}">{{ project.code_sample }}</code></pre>
                     {% else %}
-                    <pre class="text-gray-800 p-6 rounded text-xs font-mono overflow-x-auto w-full border border-gray-200"><code>{{ project.code_sample }}</code></pre>
+                    <pre class="text-gray-800 p-6 rounded border border-gray-200"><code>{{ project.code_sample }}</code></pre>
                     {% endif %}
                     {% endif %}
                 </div>

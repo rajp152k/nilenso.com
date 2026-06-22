@@ -134,10 +134,10 @@ main {
     filter: brightness(0) saturate(100%) invert(100%);
 }
 
-pre code {
-    white-space: pre;
-    word-break: normal;
-    overflow-wrap: normal;
+pre[class*="language-"] code[class*="language-"] {
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 0.9em;
 }
 
 h1 {
