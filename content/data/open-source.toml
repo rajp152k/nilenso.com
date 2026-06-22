@@ -1,0 +1,105 @@
+[[projects]]
+name = "Context Viewer"
+tagline = "Break a conversation log into its parts and visualise how each grows across turns in token count and relative weight."
+description = "Context Viewer takes a conversation log, breaks it down into constituent components — system prompts, tool calls, generated artefacts, user instructions — and visualises how each grows across turns in token count and relative weight. It uses AI-assisted semantic chunking to flag redundancy and irrelevance, and runs entirely in the browser with support for OpenAI conversation formats."
+icon = "/images/svg/sparkle.svg"
+media_type = "video"
+media_src = "/videos/context-viewer-demo.mp4"
+github_url = "https://github.com/nilenso/context-viewer"
+docs_url = "https://github.com/nilenso/context-viewer"
+playground_url = "https://nilenso.github.io/context-viewer/"
+paper_url = "https://www.alphaxiv.org/abs/context-viewer"
+blog_posts = [
+    { title = "A Short Lesson in Simpler Prompts", url = "https://blog.nilenso.com/blog/2025/11/04/a-short-lesson-in-simpler-prompts/" },
+    { title = "Fight Context Rot with Context Observability", url = "https://blog.nilenso.com/blog/2025/10/29/fight-context-rot-with-context-observability/" },
+    { title = "How System Prompts Define Agent Behaviour", url = "https://blog.nilenso.com/blog/2026/02/10/how-system-prompts-define-agent-behaviour/" }
+]
+
+[[projects]]
+name = "Megasthenes"
+tagline = "Ask plain-language questions about any GitHub or GitLab repository — public or private — and get sourced, structured answers."
+description = "Megasthenes lets you ask plain-language questions about any GitHub or GitLab repository and get sourced, structured answers pinned to a specific branch, tag, or commit. It supports any model via OpenRouter, Anthropic, or Google, runs tool execution in an isolated container, and ships with built-in OpenTelemetry tracing and an LLM-judge evaluation system to track answer quality over time."
+icon = "/images/svg/sparkle.svg"
+media_type = "code"
+code_type = "javascript"
+code_sample = '''import { Client } from "@nilenso/megasthenes";
+
+const client = new Client();
+const session = await client.connect({
+  repo: { url: "https://github.com/owner/repo" },
+  model: { provider: "anthropic", id: "claude-sonnet-4-6" },
+  maxIterations: 20,
+});
+
+// Stream events as they arrive
+const stream = session.ask("What frameworks does this project use?");
+for await (const event of stream) {
+  if (event.type === "text_delta") process.stdout.write(event.delta);
+}
+
+// Or wait for the complete result
+const result = await session.ask("How are the tests structured?").result();
+console.log(result.steps); // All steps: text, tool calls, thinking, etc.
+console.log(result.usage); // Token usage across all iterations
+
+await session.close();'''
+github_url = "https://github.com/nilenso/megasthenes"
+docs_url = "https://nilenso.github.io/megasthenes"
+blog_posts = [
+    { title = "Our approach to evals with megasthenes", url = "https://blog.nilenso.com/blog/2026/06/10/our-approach-to-evals-with-megasthenes/" }
+]
+
+
+[[projects]]
+name = "GRPO Trainer"
+tagline = "Toolkit to fine-tune LLMs"
+description = "grpo-trainer is a toolkit for fine-tuning LLMs to generate high-quality OCaml code. It supports supervised fine-tuning (SFT), RLVR/GRPO training, evaluation, and monitoring with feedback from the OCaml compiler and test suite."
+icon = "/images/svg/sparkle.svg"
+github_url = "https://github.com/nilenso/grpo-trainer"
+media_type = "code"
+code_type = "bash"
+code_sample = '''
+# Clone repository
+git clone https://github.com/nilenso/grpo-trainer.git
+cd grpo-trainer
+
+# Enter nix shell
+make shell
+
+# Run the script
+scripts/bootstrap.sh
+
+# Start model server
+llama-server -hf unsloth/Qwen2.5-Coder-1.5B-Instruct-GGUF:F16 -c 4096 -ngl -1
+'''
+blog_posts = [
+    { title = "Training a small model to write better OCaml with RLVR and GRPO", url = "https://blog.nilenso.com/blog/2026/05/18/training-a-small-model-to-write-better-ocaml-with-rlvr-and-grpo/" },
+    { title = "Reinforcement Learning with GRPO", url = "https://blog.nilenso.com/blog/2026/01/28/reinforcement-learning-with-grpo/" },
+]
+
+[[projects]]
+name = "Bean"
+tagline = "A spreadsheet programming environment built to make spreadsheets maintainable, auditable, and reliable."
+description = "Bean explores the spreadsheet as a programming environment from the ground up. It consists of grid, a formula language interpreter that enables reactive calculation with dynamic arrays."
+media_type = "image"
+media_src = "/images/bean.png"
+github_url = "https://github.com/nilenso/bean"
+playground_url = "https://bean.nilenso.com/"
+website_url = "https://bean.nilenso.com/blog/"
+youtube_url = "https://youtu.be/qj4ZFOBUbqY?si=BDInePuQUvxpOjvG"
+blog_posts = [
+    { title = "Spreadsheets as a Tool for Thought: Evolution of the Spreadsheet Interface", url = "https://prabros.com/bean/blog/spreadsheet-as-a-tool-for-thought-1" },
+    { title = "Spreadsheets and Small Software", url = "https://blog.nilenso.com/blog/2023/11/10/spreadsheets-and-small-software/" },
+    { title = "Calculating spilled arrays in a spreadsheet", url = "https://bean.nilenso.com/blog/posts/calculating-spilled-arrays/" },
+    { title = "On relative references and formula replication", url = "https://bean.nilenso.com/blog/posts/relative-references/" }
+]
+
+[[projects]]
+name = "Goose"
+tagline = "A background job processing library for Clojure with native support for RabbitMQ and Redis."
+description = "Goose supports enqueuing jobs for async execution, scheduled execution, batch processing, and cron jobs — with native support for both RabbitMQ and Redis as message brokers. Error handling and retries are built in, and the message broker and metrics backend are pluggable. A jobs management console provides visibility into queue state and job lifecycle. It is currently used in production across multiple companies."
+media_type = "image"
+media_src = "/images/goose-console.png"
+github_url = "https://github.com/nilenso/goose"
+docs_url = "https://github.com/nilenso/goose/wiki"
+youtube_url = "https://youtu.be/GQ1It09DLM0?si=2hfXXKQhZnunvd-r"
